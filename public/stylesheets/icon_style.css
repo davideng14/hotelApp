@@ -1,0 +1,111 @@
+.star:after{
+	display: inline-block;
+	content: '';
+	-webkit-mask: url(/icons/filters/star.svg) no-repeat 50% 50%;
+  	mask: url(/icons/filters/star.svg) no-repeat 50% 50%;
+	-webkit-mask-size: cover;
+  	mask-size: cover;
+	width: 12px;
+	height: 12px;
+	background-color: #fcbb00;	
+}
+
+.start-blue:after{
+	background-color: #2181b9;
+	-webkit-mask: url(/icons/filters/star.svg) no-repeat .1em .1em;
+  	mask: url(/icons/filters/star.svg) no-repeat .1em .1em;
+	width: 16px;
+	height: 16px;
+}
+
+.search:after{
+	display: inline-block;
+	content: '';
+	-webkit-mask: url(/icons/filters/search.svg) no-repeat 50% 50%;
+  	mask: url(/icons/filters/search.svg) no-repeat 50% 50%;
+	-webkit-mask-size: cover;
+  	mask-size: cover;
+	width: 15px;
+	height: 15px;
+	background-color: #2181b9;
+}
+
+.amenitie{
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	padding: 0em .8em;
+	background-repeat: no-repeat;
+}
+
+.restaurant{
+	background-image: url(/icons/amenities/restaurant.svg);	
+}
+
+.sheets{
+	background-image: url(/icons/amenities/sheets.svg);	
+}
+
+.business-center{
+	background-image: url(/icons/amenities/business-center.svg);	
+}
+
+.business-center{
+	background-image: url(/icons/amenities/business-center.svg);	
+}
+
+.bathrobes{
+	background-image: url(/icons/amenities/bathrobes.svg);	
+}
+
+.bathtub{
+	background-image: url(/icons/amenities/bathtub.svg);	
+}
+
+.beach-pool-facilities{
+	background-image: url(/icons/amenities/beach-pool-facilities.svg);		
+}
+
+.beach{
+	background-image: url(/icons/amenities/beach.svg);		
+}
+
+.children-club{
+	background-image: url(/icons/amenities/children-club.svg);	
+}
+
+.coffe-maker{
+	background-image: url(/icons/amenities/coffe-maker.svg);	
+}
+
+.deep-soaking-bathtub{
+	background-image: url(/icons/amenities/deep-soaking-bathtub.svg);	
+}
+
+.fitness-center{
+	background-image: url(/icons/amenities/fitness-center.svg);	
+}
+
+.garden{
+	background-image: url(/icons/amenities/garden.svg);	
+}
+
+.kitchen-facilities{
+	background-image: url(/icons/amenities/kitchen-facilities.svg);	
+}
+
+.newspaper{
+	background-image: url(/icons/amenities/newspaper.svg);		
+}
+
+.nightclub{
+	background-image: url(/icons/amenities/nightclub.svg);			
+}
+
+.safety-box{
+	background-image: url(/icons/amenities/safety-box.svg);				
+}
+
+.separate-bredroom{
+	background-image: url(/icons/amenities/separate-bredroom.svg);					
+}
