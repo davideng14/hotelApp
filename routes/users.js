@@ -16,9 +16,49 @@ ParseParameter.prototype = {
     }
 };
 
-var IntegerParser = function(){
+var IntegerParser = function(filter){
+
+	this.parameter = '';
+	this.filter = filter;
+	var self = this;
+
 	this.parse = function(parameter){
-		return parseInt(parameter); 
+		self.parameter = parseInt(parameter); 
+	}
+
+	this.filterBy = function(item){
+		return item[self.filter] == self.parameter;
+	}
+}
+
+var ArrayParser = function(filter){
+
+	this.parameter;
+	this.filter = filter;
+	var self = this;
+
+	this.parse = function(parameter){
+		self.parameter = parameter.split(",");
+	}
+
+	this.filterBy = function(item){
+		return self.parameter.indexOf(""+item[self.filter]) !== -1;
+	}
+
+}
+
+var StringParser = function(filter){
+
+	this.parameter;
+	this.filter = filter;
+	var self = this;
+
+	this.parse = function(parameter){
+		self.parameter = parameter;
+	}	
+
+	this.filterBy = function(item){
+		return item[self.filter].indexOf(self.parameter) !== -1;
 	}
 }
 
@@ -28,24 +68,32 @@ var IntegerParser = function(){
 router.get('/', function(req, res, next) {
 	var filter = req.query.filter,
 		parameter = req.query.parameter,
-		parseParameter = new ParseParameter(),
-		integerParser = new IntegerParser();
+		parseParameter = new ParseParameter();
 
-	parseParameter.setStrategy(integerParser);
+	if(parameter !== undefined && parameter.indexOf(",") !== -1 ){
+		var arrayParser = new ArrayParser(filter);
+		parseParameter.setStrategy(arrayParser);
+		parseParameter.parse(parameter);
 
-	var parameterParsed = parseParameter.parse(parameter);
+	}else if(parameter !== undefined && !isNaN(parseInt(parameter))){
+		var integerParser = new IntegerParser(filter);
+		parseParameter.setStrategy(integerParser);
+		parseParameter.parse(parameter);
 
-	console.log(typeof parameterParsed, parameterParsed, isNaN(parameterParsed));
-
-	if(isNaN(parameterParsed)){
-		parameterParsed = parameter;	
+	}else if(parameter !== undefined){
+		var stringParser = new StringParser(filter);
+		parseParameter.setStrategy(stringParser);
+		parseParameter.parse(parameter);
+		
 	}
 
-	console.log(typeof parameterParsed);
+	var dataFiltered;
 
-	var dataFiltered = data.filter(function(item){
-		return item[filter] === parameterParsed;
-	});
+	if(parameter !== undefined && filter !== undefined){
+		dataFiltered = data.filter(parseParameter.parser.filterBy);
+	}else{
+		dataFiltered = data;
+	}
 
   	res.send(dataFiltered);
 

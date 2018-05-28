@@ -20,8 +20,8 @@
 	    	<div class="filter-header hotel-name-filter">
 	    		<div class="title-filter"><span class="search"></span> <label>Nombre de hotel</label></div>
 	    		<div>
-	    			<input type="text" name="hotelName" placeholder="Ingrese el nombre del hotel">
-	    			<button class="btn-filter btn-general">Aceptar</button>
+	    			<input type="text" name="hotelName" ng-model="hotel_name" placeholder="Ingrese el nombre del hotel">
+	    			<button class="btn-filter btn-general" ng-click="filterBy('name')">Aceptar</button>
 	    		</div>
 	    	</div>
 	    	<div class="filter-header star-filter">
@@ -29,10 +29,10 @@
 	    			<span class="star start-blue"></span> <label>Estrellas</label>
 	    		</div>
 	    		<div>
-	    			<input type="checkbox" name="all-stars"> Todas las estrellas
+	    			<input ng-change="filterBy('stars')" ng-model="all_stars" type="checkbox" name="all-stars"> Todas las estrellas
 	    		</div>
 	    		<div>
-	    			<input ng-click="filterBy('stars',5, $event)" type="checkbox" name="five-stars"> 
+	    			<input ng-change="filterBy('stars')" ng-model="five_stars" type="checkbox" name="five-stars"> 
 	    			<span class="star"></span>
 			      	<span class="star"></span>
 			      	<span class="star"></span>
@@ -40,25 +40,25 @@
 			      	<span class="star"></span>
 	    		</div>
 	    		<div>
-	    			<input ng-click="filterBy('stars',4)" type="checkbox" name="four-stars">
+	    			<input ng-change="filterBy('stars')" ng-model="four_stars" type="checkbox" name="four-stars">
 	    			<span class="star"></span>
 			      	<span class="star"></span>
 			      	<span class="star"></span>
 			      	<span class="star"></span>
 	    		</div>
 	    		<div>
-	    			<input ng-click="filterBy('stars',3)" type="checkbox" name="three-stars">
+	    			<input ng-change="filterBy('stars')" ng-model="three_stars" type="checkbox" name="three-stars">
 	    			<span class="star"></span>
 			      	<span class="star"></span>
 			      	<span class="star"></span>
 	    		</div>
 	    		<div>
-	    			<input ng-click="filterBy('stars',2)" type="checkbox" name="two-stars">
+	    			<input ng-change="filterBy('stars')" ng-model="two_stars" type="checkbox" name="two-stars">
 	    			<span class="star"></span>
 			      	<span class="star"></span>
 	    		</div>
 	    		<div>
-	    			<input ng-click="filterBy('stars',1)" type="checkbox" name="one-stars">
+	    			<input ng-change="filterBy('stars')" ng-model="one_stars" type="checkbox" name="one-stars">
 	    			<span class="star"></span>
 	    		</div>
 	    	</div>
@@ -91,37 +91,6 @@
 	<script src="/bower_components/angular/angular.js"></script>
 	<script src="/bower_components/angular-resource/angular-resource.js"></script>
 	<script src="/javascripts/config.js"></script>
-	<script type="text/javascript">
-		angular.module('hotels', [])
-		.constant("baseURL", baseURL)
-		.service('hotelsFactory', ['$http', 'baseURL', function($http, 	baseURL){
-
-			this.getHotels = function(filter, parameter){
-				return $http.get(baseURL+"hotels");
-			}
-
-			this.getHotelsBy = function(filter, parameter){
-				return $http.get(baseURL+"hotels?filter="+filter+"&parameter="+parameter);
-			}
-
-		}])
-		.controller("hotelController", function($scope, hotelsFactory){
-
-			hotelsFactory.getHotels().then(function(response){
-				$scope.hotels = response.data;
-			});
-
-			$scope.getNumber = function(num) {
-			    return (new Array(num));
-			}
-
-			$scope.filterBy = function(filter, parameter) {
-				hotelsFactory.getHotelsBy(filter, parameter).then(function(response){
-					$scope.hotels = response.data;	
-				});
-			}
-
-		});
-	</script>
+	<script src="/javascripts/app.js"></script>
 </body>
 </html>
