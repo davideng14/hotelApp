@@ -1,0 +1,233 @@
+body{
+	background-color: #f4f4f4;
+}
+
+.container{
+	margin-top: 1em;
+	max-width: 1200px;
+}
+
+.section-padding{
+	padding: .4em
+}
+
+.bg-blue {
+    background-color: darkblue;
+}
+
+.hotel-item{
+	border: solid 1px lightgray;
+	padding: .5em;
+	background-color: white;
+	margin-bottom: 1em;
+}
+
+input[name=hotelName]{
+	font-size: .8em;
+	padding: .2em;
+}
+
+.hotel-item-image img{
+	width: 100%;
+}
+
+.filter-section div:nth-child(1){
+	font-weight: bold;
+}
+
+.star-filter div:nth-child(2){
+	font-size: .8em;
+	font-weight: bold;
+}
+
+.star-filter div{
+	padding: .2em;
+}
+
+.title{
+	color: #2181b9;
+	font-weight: bold;
+}
+
+.btn-general{
+	background-color: darkblue;
+	border-color: darkblue;
+}
+
+.btn-general:hover{
+	background-color: darkblue;
+	border-color: darkblue;
+}
+
+.btn-hotel{
+	width: 80%;
+	font-weight: bold;
+}
+
+.btn-hotel:hover{
+	font-weight: bold;
+}
+
+.price{
+	color:#e16b00;
+	font-size: 1.2em;
+	padding: .5em
+}
+
+.price span{
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.price-text{
+	font-size: .7em;
+	color: gray;
+	padding: 0em 1em;
+}
+
+.price-section{
+	border-left: 1px dashed lightgray;
+	padding: 1.5em;
+}
+
+.filter-header{
+	background-color: white;
+	padding: .5em 1em;
+	margin-bottom: .1em;
+	border: 1px solid lightgray;
+}
+
+div.title-filter{
+	color: #2181b9;
+	font-size: .8em;
+	font-weight: bold;
+	padding-bottom: .8em; 
+}
+
+.title-filter label{
+	padding-left: .2em;
+}
+
+.btn-filter{
+	color: white;
+}
+
+/*************
+ICONS
+**************/
+
+svg{
+	color: #fcbb00;
+}
+
+.star:after{
+	display: inline-block;
+	content: '';
+	-webkit-mask: url(/icons/filters/star.svg) no-repeat 50% 50%;
+  	mask: url(/icons/filters/star.svg) no-repeat 50% 50%;
+	-webkit-mask-size: cover;
+  	mask-size: cover;
+	width: 12px;
+	height: 12px;
+	background-color: #fcbb00;	
+}
+
+.start-blue:after{
+	background-color: #2181b9;
+	-webkit-mask: url(/icons/filters/star.svg) no-repeat .1em .1em;
+  	mask: url(/icons/filters/star.svg) no-repeat .1em .1em;
+	width: 16px;
+	height: 16px;
+}
+
+.search:after{
+	display: inline-block;
+	content: '';
+	-webkit-mask: url(/icons/filters/search.svg) no-repeat 50% 50%;
+  	mask: url(/icons/filters/search.svg) no-repeat 50% 50%;
+	-webkit-mask-size: cover;
+  	mask-size: cover;
+	width: 15px;
+	height: 15px;
+	background-color: #2181b9;
+}
+
+.amenitie{
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	padding: 0em .8em;
+	background-repeat: no-repeat;
+}
+
+.restaurant{
+	background-image: url(/icons/amenities/restaurant.svg);	
+}
+
+.sheets{
+	background-image: url(/icons/amenities/sheets.svg);	
+}
+
+.business-center{
+	background-image: url(/icons/amenities/business-center.svg);	
+}
+
+.business-center{
+	background-image: url(/icons/amenities/business-center.svg);	
+}
+
+.bathrobes{
+	background-image: url(/icons/amenities/bathrobes.svg);	
+}
+
+.bathtub{
+	background-image: url(/icons/amenities/bathtub.svg);	
+}
+
+.beach-pool-facilities{
+	background-image: url(/icons/amenities/beach-pool-facilities.svg);		
+}
+
+.beach{
+	background-image: url(/icons/amenities/beach.svg);		
+}
+
+.children-club{
+	background-image: url(/icons/amenities/children-club.svg);	
+}
+
+.coffe-maker{
+	background-image: url(/icons/amenities/coffe-maker.svg);	
+}
+
+.deep-soaking-bathtub{
+	background-image: url(/icons/amenities/deep-soaking-bathtub.svg);	
+}
+
+.fitness-center{
+	background-image: url(/icons/amenities/fitness-center.svg);	
+}
+
+.garden{
+	background-image: url(/icons/amenities/garden.svg);	
+}
+
+.kitchen-facilities{
+	background-image: url(/icons/amenities/kitchen-facilities.svg);	
+}
+
+.newspaper{
+	background-image: url(/icons/amenities/newspaper.svg);		
+}
+
+.nightclub{
+	background-image: url(/icons/amenities/nightclub.svg);			
+}
+
+.safety-box{
+	background-image: url(/icons/amenities/safety-box.svg);				
+}
+
+.separate-bredroom{
+	background-image: url(/icons/amenities/separate-bredroom.svg);					
+}
